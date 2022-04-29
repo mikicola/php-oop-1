@@ -13,9 +13,9 @@ class Movie
    private $title;
    private $director;
 
-   private $genre;
-   private $year;
-   private $rating = '';
+   private $genre = 'Informazione non ancora disponibile';
+   private $year = 'Informazione non ancora disponibile';
+   private $rating = 'Informazione non ancora disponibile';
 
 
    // si mette $_ per distinguerli, è una convenzione
@@ -72,5 +72,10 @@ $movieKillBill2->setMovieGenre('Action');
 $movieKillBill2->setMovieYear('2004');
 $movieKillBill2->setMovieRating('8/10');
 echo $movieKillBill2->getMovieInfo();
+
+$movieOnceUponATimeInHollywood = new Movie("C'era una volta a... Hollywood", 'Quentin Tarantino');
+$movieOnceUponATimeInHollywood->setMovieYear('2019');
+echo $movieOnceUponATimeInHollywood->getMovieInfo();
+
 
 ?>
