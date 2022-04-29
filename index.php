@@ -15,7 +15,8 @@ class Movie
 
    private $genre;
    private $year;
-   private $rating;
+   private $rating = '';
+
 
    // si mette $_ per distinguerli, è una convenzione
    public function __construct($_title, $_director){
@@ -31,13 +32,26 @@ class Movie
       return $this-> director;
    }
 
-   public function setMovieGenre(){
-      return $this-> genre;
+   public function setMovieGenre($_genre){
+      $this->genre = $_genre;
+      return $this;
    }
 
-   public function setMovieRating(){
-      return $this-> rating;
+   public function setMovieYear($_year){
+      $this->year = $_year;
+      return $this;
+   }
+
+   public function setMovieRating($_rating){
+      $this->rating = $_rating;
+      return $this;
    }
 }
+
+$movieKillBill = new Movie('Kill Bill: Volume 1', 'Quentin Tarantino');
+$movieKillBill->setMovieGenre('Action');
+$movieKillBill->setMovieYear('2003');
+$movieKillBill->setMovieRating('8,2/10');
+var_dump($movieKillBill)
 
 ?>
