@@ -25,12 +25,13 @@ class Movie
    }
 
    public function getMovieTitle(){
-      return $this-> title;
+      return $this->title;
    }
 
    public function getMovieDirector(){
-      return $this-> director;
+      return $this->director;
    }
+   
 
    public function setMovieGenre($_genre){
       $this->genre = $_genre;
@@ -46,12 +47,30 @@ class Movie
       $this->rating = $_rating;
       return $this;
    }
+
+   public function getMovieInfo(){
+      return(
+         '<h2>' . $this->title . '</h2>
+         <span>Regista: <b>' . $this->director . '</b></span><br>
+         <span>Genere: <b>' . $this->genre . '</b></span><br>
+         <span>Anno: <b>' . $this->year . '</b></span><br>
+         <span>Valutazione IMDb: <b>' . $this->rating . '</b></span>'
+      );
+   }
 }
 
-$movieKillBill = new Movie('Kill Bill: Volume 1', 'Quentin Tarantino');
-$movieKillBill->setMovieGenre('Action');
-$movieKillBill->setMovieYear('2003');
-$movieKillBill->setMovieRating('8,2/10');
-var_dump($movieKillBill)
+$movieKillBill1 = new Movie('Kill Bill: Volume 1', 'Quentin Tarantino');
+$movieKillBill1->setMovieGenre('Action');
+$movieKillBill1->setMovieYear('2003');
+$movieKillBill1->setMovieRating('8,2/10');
+// var_dump($movieKillBill1);
+echo $movieKillBill1->getMovieInfo();
+
+
+$movieKillBill2 = new Movie('Kill Bill: Volume 2', 'Quentin Tarantino');
+$movieKillBill2->setMovieGenre('Action');
+$movieKillBill2->setMovieYear('2004');
+$movieKillBill2->setMovieRating('8/10');
+echo $movieKillBill2->getMovieInfo();
 
 ?>
